@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class Paperclip {
+    public static boolean ignoreInvalidFiles = Boolean.parseBoolean(System.getProperty("ignoreInvalidFiles", String.valueOf(false)));
 
     public static void main(final String[] args) {
         if (Path.of("").toAbsolutePath().toString().contains("!")) {

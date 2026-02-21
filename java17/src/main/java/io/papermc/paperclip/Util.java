@@ -72,7 +72,7 @@ class Util {
     }
 
     static boolean isDataValid(final byte[] data, final byte[] hash) {
-        return Arrays.equals(hash, sha256Digest.digest(data));
+        return Paperclip.ignoreInvalidFiles || Arrays.equals(hash, sha256Digest.digest(data));
     }
     static boolean isFileValid(final Path file, final byte[] hash) {
         if (Files.exists(file)) {
